@@ -1,0 +1,95 @@
+@charset "UTF-8";
+	body {
+	    background-color: #f9f9f9;
+	    font-family: 'Noto Sans KR', sans-serif;
+	}
+	
+	.notice-title {
+	    text-align: center;
+	    margin-top: 40px;
+	    font-size: 28px;
+	    color: #333;
+	}
+	
+	.notice-detail-container {
+	    max-width: 900px;
+	    margin: 20px auto;
+	    background: white;
+	    padding: 30px;
+	    border-radius: 16px;
+	    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+	}
+	
+	.notice-detail-table {
+	    width: 100%;
+	    border-collapse: collapse;
+	    font-size: 15px;
+	    margin-bottom: 30px;
+	}
+	
+	.notice-detail-table th {
+	    background-color: #f1f1f1;
+	    text-align: left;
+	    padding: 12px;
+	    font-weight: bold;
+	    border: 1px solid #ddd;
+	    width: 120px;
+	}
+	
+	.notice-detail-table td {
+	    padding: 12px;
+	    border: 1px solid #ddd;
+	}
+	
+	.notice-content {
+	    white-space: pre-line;
+	    background-color: #fcfcfc;
+	    border-radius: 8px;
+	    padding: 20px;
+	    line-height: 1.6;
+	    color: #444;
+	}
+	
+	.notice-btns {
+    display: flex;
+    justify-content: center;
+    gap: 16px; /* 버튼 사이 간격 */
+    margin-top: 20px;
+	}
+	
+	.notice-btns a button {
+	    border: none;
+	    padding: 10px 20px;
+	    border-radius: 12px;
+	    font-weight: bold;
+	    font-size: 14px;
+	    cursor: pointer;
+	}
+	
+	/* 버튼별 색상 */
+	.btn-primary {
+	    background-color: #4CAF50;
+	    color: white;
+	}
+	
+	.btn-primary:hover {
+	    background-color: #45a049;
+	}
+	
+	.btn-danger {
+	    background-color: #f44336;
+	    color: white;
+	}
+	
+	.btn-danger:hover {
+	    background-color: #d32f2f;
+	}
+	
+	.btn-default {
+	    background-color: #e0e0e0;
+	    color: #222;
+	}
+	
+	.btn-default:hover {
+	    background-color: #ccc;
+	}
