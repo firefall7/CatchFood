@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>메뉴등록</title>
 </head>
+<link rel="stylesheet" href="/css/menuinsert.css">
 <body>
 	<jsp:include page="../top.jsp"/>
 	
