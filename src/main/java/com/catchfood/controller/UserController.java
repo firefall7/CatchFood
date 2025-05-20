@@ -124,21 +124,21 @@ public class UserController {
 	    
 	    //비밀번호 변경 후 -> main으로 
 	    @RequestMapping("informationChange")
-	    public String informationChangeForm(@RequestParam("newPassword") String newPassword,
-	                                        @RequestParam("newPasswordCheck") String newPasswordCheck,
-	                                        HttpSession session,
-	                                        Model model) {
+	    public String resetPassword(@RequestParam("newPassword") String newPassword,
+	                                HttpSession session, Model model) {
+	        Integer userNum = (Integer) session.getAttribute("resetUserNum");
 
-	        if (!newPassword.equals(newPasswordCheck)) {
-	            model.addAttribute("error", "비밀번호가 일치하지 않습니다.");
-	            return "User/passwordChange";
+	        if (userNum != null) {
+	            userService.updatePassword(userNum, newPassword);
+	            session.removeAttribute("resetUserNum");
+	            model.addAttribute("message", "비밀번호가 성공적으로 변경되었습니다.");
+	            return "redirect:/";  //성공 시 홈으로
+	        } else {
+	            model.addAttribute("error", "유효하지 않은 요청입니다.");
+	            return "User/passwordChange";  //다시 비밀번호 수정 폼으로 이동
 	        }
-
-	        UserDto loginUser = (UserDto) session.getAttribute("loginUser");
-	        userService.updatePassword(loginUser.getUserNum(), newPassword);
-
-	        return "redirect:/";
 	    }
+
 
 	   //회원 리스트
 	   @RequestMapping("userList")
@@ -153,7 +153,7 @@ public class UserController {
 		   return "User/findUserId";
 	   }
 	   
-	   //아이디 찾기 실행
+	   //아이디 찾기 실행(새창열어주기)
 	   @RequestMapping("findUserId")
 	   public String findUserId(@RequestParam("userEmail") String userEmail, Model model) {
 		   String userId = userService.findUserIdByEmail(userEmail);
@@ -165,6 +165,7 @@ public class UserController {
 		    return "User/findIdResult";
 	   }
 	   
+	   
 	   //비밀번호 찾기 폼
 	   @RequestMapping("findPasswordForm")
 	   public String findPwForm() {
@@ -173,15 +174,17 @@ public class UserController {
 	   
 	   //비밀번호 찾기 실행
 	   @RequestMapping("findUserPassword")
-	   public String findUserPw(@RequestParam("userId") String userId, Model model) {
-		   String userPasswd = userService.findUserIdByEmail(userId);
-		    if (userPasswd != null) {
-		        model.addAttribute("userPasswd", userPasswd);
-		    } else {
-		        model.addAttribute("error", "일치하는 아이디가 없습니다.");
-		    }
-		   return "User/findPasswordResult";
-	   }
-	   
+	   public String findUserPw(@RequestParam("userId") String userId, HttpSession session, Model model) {
+	       UserDto user = userDao.findByUserId(userId);
+	       
+	       if (user != null) {
+	           session.setAttribute("resetUserNum", user.getUserNum());
+	           model.addAttribute("userName", user.getUserName()); // 이걸 JSP로 보냄
+	           return "User/findUserPassword"; // 다시 JSP로 리턴
+	       } else {
+	           model.addAttribute("error", "일치하는 아이디가 없습니다.");
+	           return "User/findUserPassword";// 실패 메시지
+	       }
+	   }	   
 	   
 }

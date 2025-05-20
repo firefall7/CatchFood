@@ -1,0 +1,60 @@
+@charset "UTF-8";
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f9f9f9;
+}
+
+.findTitle {
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+.findDesc {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.findContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    height: 370px;
+    margin-top: 40px; 
+}
+
+.findBox {
+    background-color: white;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    min-width: 350px;
+}
+
+
+.findBox input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.findBox input[type="submit"] {
+    background-color: #ff5a5f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.findBox input[type="submit"]:hover {
+    background-color: #e24e53;
+}

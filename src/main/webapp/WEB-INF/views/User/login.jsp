@@ -28,7 +28,7 @@
 	        <i class="fa-solid fa-eye toggle-password" onclick="togglePw('userPasswd', this)"></i>
 	      </div>
 	      <input type="submit" value="로그인"><p>
-	      <div>
+	      <div class="findLink">
 	      	<a href="/findIdForm">아이디 찾기</a> | 
 	     	<a href="/findPasswordForm">비밀번호 찾기</a>
 	     </div>

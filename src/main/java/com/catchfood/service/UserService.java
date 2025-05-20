@@ -51,9 +51,5 @@ public class UserService {
         return userDao.findUserIdByEmail(userEmail);
     }
     
-    //비밀번호 찾기
-    public String findUserPasswdById(String userId) {
-        return userDao.findUserPasswdById(userId);
-    }
 
 }

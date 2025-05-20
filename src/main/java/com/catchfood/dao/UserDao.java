@@ -9,7 +9,7 @@ import com.catchfood.dto.UserDto;
 
 @Mapper
 public interface UserDao {
-	//예약
+	//예약 + 비밀번호 찾기(아이디)
 	public UserDto findByUserId(String userId); 
 	
 	// 회원가입
@@ -30,7 +30,6 @@ public interface UserDao {
     //아이디 찾기(이메일)
     public String findUserIdByEmail(String userEmail);
     
-    //비밀번호 찾기(아이디)
-    public String findUserPasswdById(String userId);
+   
   
 }
