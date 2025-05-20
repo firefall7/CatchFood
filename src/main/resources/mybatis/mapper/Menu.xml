@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.catchfood.dao.MenuDao">
+	
+	<select id="getMenusByCategory" parameterType="int" resultType="com.catchfood.dto.MenuDto">
+	    select * from menu where categoryNum = #{categoryNum}  and deleted = 0 ORDER BY menuNum DESC
+	</select>
+	
+	<select id="menudetail" parameterType="int" resultType="com.catchfood.dto.MenuDto">
+	    select * from menu where menuNum=#{menuNum}
+	</select>
+	
+	<select id="recommendmenu" parameterType="int" resultType="com.catchfood.dto.MenuDto">
+	    select * from menu where menuRecommend=1 and deleted=0
+	</select>
+	
+	<insert id="insertmenu" parameterType="com.catchfood.dto.MenuDto">
+		insert into menu (
+   		 menuName, menuPrice, menuDescription, menuImage,
+  		  menuRecommend, menuCount, menuPTotal, categoryNum
+		) values (
+  		  #{menuName},#{menuPrice},#{menuDescription},#{menuImage},#{menuRecommend},#{menuCount},#{menuPTotal},#{categoryNum}
+  		  );
+	</insert>
+	
+	<update id="updatemenu">
+		update menu set
+		menuName=#{menuName},menuPrice=#{menuPrice},menuDescription=#{menuDescription},menuImage=#{menuImage},menuRecommend=#{menuRecommend},categoryNum=#{categoryNum}
+		where menuNum=#{menuNum}
+	</update>
+	
+<update id="deletemenu" parameterType="int">
+    UPDATE menu SET deleted = 1 WHERE menuNum = #{menuNum}
+</update>
+	</mapper>
+	

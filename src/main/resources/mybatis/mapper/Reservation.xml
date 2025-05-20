@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.catchfood.dao.ReservationDao">
+	<!-- 전체 예약 리스트(관리자용) -->
+	<select id="reservationList" resultType="com.catchfood.dto.ReservationDto">
+		select * from reservation order by reservationDate desc
+	</select>
+
+	<!-- 예약 상세 보기(관리자용) -->
+	<select id="reservationDetail" resultType="com.catchfood.dto.BasketViewDto">
+		select 
+		 	r.reservationNum,
+		    r.reservationDate,
+		    r.reservationNumber,
+		    r.reservationRequest,
+		    r.reservationNow,
+		    r.userNum,
+		    m.menuName,
+		    b.basketCount,
+		    b.basketPTotal
+		 from reservation r 
+		  	join basket b ON r.reservationNum = b.reservationNum
+		  	join menu m ON b.menuNum = m.menuNum 
+		 where r.reservationNum = #{reservationNum}
+	</select>
+	
+	<!-- 예약 삭제하기(관리자용) -->
+	<delete id="reservationDelete">
+		delete from reservation where reservationNum = #{reservationNum}
+	</delete>
+	
+	<!-- 결제 후 DB에 내용 추가 -->
+	<insert id="reservationInsert" useGeneratedKeys="true" keyProperty="reservationNum">
+		insert into reservation(reservationDate, reservationNumber, reservationRequest, userNum)
+		 values(#{reservationDate}, #{reservationNumber}, #{reservationRequest}, #{userNum})
+	</insert>
+</mapper>

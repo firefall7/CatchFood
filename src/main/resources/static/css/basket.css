@@ -1,0 +1,44 @@
+@charset "UTF-8";
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .reservation-block {
+      margin-bottom: 40px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .reservation-block h3 {
+      margin: 0 0 10px 0;
+      color: #0077cc;
+    }
+
+    .reservation-block p {
+      margin: 0 0 10px 0;
+      font-style: italic;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table th, table td {
+      border: 1px solid #aaa;
+      padding: 8px;
+      text-align: center;
+    }
+
+    table th {
+      background-color: #e0e0e0;
+    }
+

@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #f9f9f9;
+    }
+    .navbar {
+      background-color: #ff5a5f;
+      color: white;
+      height: 60px; /* 고정 높이 */
+      padding: 0px 16px;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    .navbar-left {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-left img {
+	  height: 50px;
+	  vertical-align:middle;
+	}
+	
+    .right-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .toggle-btn {
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .auth-links {
+      font-size: 14px;
+      display: flex;
+      gap: 10px;
+    }
+    .auth-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: normal;
+    }
+    .sidebar {
+      position: fixed;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      height: calc(100% - 60px);
+      background-color: #fff;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      transition: right 0.3s ease-in-out;
+      padding: 20px;
+      z-index: 1000;
+      display: none;
+    }
+    .sidebar.active {
+      display: block;
+    }
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 60px);
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+    .overlay.active {
+      display: block;
+    }
+    .content {
+      margin-top: 70px;
+      padding: 0 20px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 30px 0 10px;
+      text-align: center;
+    }
+    @media (min-width: 1600px) {
+      body {
+        zoom: 0.9;
+      }
+    }
+    @media (max-width: 768px) {
+      .menu-card {
+        width: 100% !important;
+        margin: 0 auto;
+      }
+      .content {
+        padding: 0 10px;
+      }
+      .auth-links {
+        display: none;
+      }
+    }
+	.main-wrapper {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: flex-start;   /* 왼쪽 정렬 */
+	  text-align: left;          /* 텍스트 왼쪽 정렬 */
+	  margin-top: 20px;          /* 필요 시 조절 */
+	  margin-bottom: 40px;
+	  padding-left: 20px;        /* 왼쪽 여백 약간 주기 */
+	}
+	
+	.maincontent h2 {
+	  font-size: 32px;
+	  font-weight: bold;
+	  margin: 0;
+	}
+	
+	.maincontent p {
+	  font-size: 20px;
+	  margin: 0;
+	  margin-top: 5px;
+	}
+
+	.main-banner-slider {
+	  position: relative;
+	  width: 100%;
+	  max-width: 800px;
+	  margin: 30px auto;
+	  overflow: hidden;
+	  border-radius: 12px;
+	  background-color: #fff;
+	  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	  text-align: center;
+	}
+	
+	.banner-slide {
+	  display: none;
+	  width: 100%;
+	}
+	
+	.banner-slide.active {
+	  display: block;
+	}
+	
+	.banner-slide img {
+	  width: 100%;
+	  height: auto;
+	  object-fit: cover;
+	  border-radius: 12px;
+	}
+	
+	.banner-pagination {
+	  position: absolute;
+	  bottom: 10px;
+	  right: 20px;
+	  font-size: 14px;
+	  background: rgba(0, 0, 0, 0.5);
+	  color: white;
+	  padding: 3px 10px;
+	  border-radius: 20px;
+	}
+	.banner-pagination:empty {
+     display: none;
+   }

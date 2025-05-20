@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.catchfood.dao.UserDao">
+		<select id="findByUserId" resultType="com.catchfood.dto.UserDto">
+			select * from user where userId = #{userId}
+		</select>
+		
+		<!-- 로그인시 DB에서 회원id, pw -->
+		<select id="login" resultType="com.catchfood.dto.UserDto">
+			select * from user where userId = #{userId} and userPasswd = #{userPasswd}
+		</select>
+		
+		
+		<!-- 회원가입시 정보 삽입 -->
+		<insert id="registerProcess" parameterType="com.catchfood.dto.UserDto">
+	        insert into user (
+	            userId, userPasswd, userEmail, userName, userBirth, 
+	            userGender, userPhone, userAddress, userAddrdetail
+	        ) values (
+	            #{userId}, #{userPasswd}, #{userEmail}, #{userName}, #{userBirth}, 
+	            #{userGender}, #{userPhone}, #{userAddress}, #{userAddrdetail}
+	        )
+	    </insert>
+	    
+	    <!-- userNum으로 회원정보 찾기(회원정보수정 페이지)-->
+	    <select id="userInformationUpdate" resultType="com.catchfood.dto.UserDto">
+	    	select * from user where userNum = #{userNum}
+	    </select>
+	    
+	    <!-- 회원 비밀번호 수정 -->
+	    <update id="userPasswordChange">
+	    	update user set userPasswd = #{userPasswd}
+	    	 where userNum = #{userNum}
+	    </update>
+	    
+	    <!-- 회원 리스트 -->
+	    <select id="userList" resultType="com.catchfood.dto.UserDto">
+	    	select * from user
+	    </select>
+	    
+	    <!-- 아이디 찾기 -->
+		<select id="findUserIdByEmail" resultType="string">
+		  select userId from user where userEmail = #{userEmail}
+		</select>
+	    
+	    <!-- 비밀번호 찾기 -->
+		<select id="findUserPasswdById" resultType="string">
+		  select userPasswd from user where userId = #{userId}
+		</select>
+		
+	</mapper>

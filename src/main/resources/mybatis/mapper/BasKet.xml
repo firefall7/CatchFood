@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.catchfood.dao.BasketDao">
+		
+	<insert id="BasketInsert">
+	   insert into basket (userNum, menuNum, basketCount, basketPTotal, reservationNum)
+    	values (#{userNum}, #{menuNum}, #{basketCount}, #{basketPTotal}, #{reservationNum})
+	</insert>
+	
+	<select id="BasketList"  resultType="com.catchfood.dto.BasketDto">
+	    select * from basket where reservationNum=#{reservationNum}
+	</select>
+	
+	<select id="MyBasket" resultType="com.catchfood.dto.BasketViewDto">
+	    select
+	        b.reservationNum,
+	        r.reservationDate,
+	        r.reservationNumber,
+	        r.reservationRequest,
+	        m.menuName,
+	        b.basketCount,
+	        b.basketPTotal
+	    from basket b
+	    join reservation r on b.reservationNum = r.reservationNum
+	    join menu m on b.menuNum = m.menuNum
+	    where b.userNum = #{userNum}
+	    order by b.reservationNum desc
+	</select>
+	
+	</mapper>

@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+/* 기본 설정 */
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f5f8;
+  color: #333;
+  line-height: 1.7;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+}
+
+.wrapper {
+  min-height: 100vh;
+  /*display: flex;*/
+  width: 100%;
+  flex-direction: column;
+  align-items: center; /* 수평 중앙 정렬 */
+  justify-content: center; /* 수직 중앙 정렬 */
+}
+
+/* 공통 컨테이너 스타일 */
+.container,
+.payment-container {
+  width: 90%;
+  max-width: 1000px;
+  background-color: white;
+  margin: 40px auto;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* 헤더 스타일 */
+header h1 {
+  color: #8B2E2E;
+  font-size: 2.25rem;
+  margin-bottom: 10px;
+}
+
+/* 확인 메시지 박스 */
+.confirmation-box h2 {
+  color: #4CAF50;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.confirmation-box p {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+/* 결제 영역 추가 스타일 */
+.order-summary {
+  background: #ecf0f1;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.order-summary h2 {
+  margin-top: 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.payment-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* 행 스타일 */
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row div {
+  flex: 1;
+}
+
+/* 버튼 스타일 */
+button {
+  width: 100%;
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #27ae60; /* 필요시 #bf360c로 변경 가능 */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e8449; /* 필요시 #a72e05로 변경 가능 */
+}
