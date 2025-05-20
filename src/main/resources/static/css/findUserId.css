@@ -45,7 +45,7 @@ body {
     border-radius: 5px;
 }
 
-.findBox input[type="submit"] {
+.findBox input[type="button"] {
     background-color: #ff5a5f;
     color: white;
     border: none;
@@ -55,6 +55,6 @@ body {
     font-size: 16px;
 }
 
-.findBox input[type="submit"]:hover {
+.findBox input[type="button"]:hover {
     background-color: #e24e53;
 }

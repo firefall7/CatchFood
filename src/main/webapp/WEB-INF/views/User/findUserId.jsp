@@ -6,19 +6,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/css/findUserId.css">
-<script> 
-	function findIdResult() {
-	    const userEmail = document.getElementById("userEmail").value;
-	
-	    if (!userEmail.trim()) {
-	        alert("이메일을 입력해주세요.");
-	        return false;
-	    }
-	
-	    const url = "findUserId?userEmail=" + encodeURIComponent(userEmail);
-	    window.open(url, "", "width=300,height=150,top=0,left=0");
-	}
-</script>
 </head>
 <body>
 	<jsp:include page="../top.jsp"/>
@@ -37,6 +24,21 @@
 			</form>
 		</div>
 	</div>
+	
 	<jsp:include page="../footer.jsp"/>
+	
+	<script> 
+	function findIdResult() {
+	    const userEmail = document.getElementById("userEmail").value;
+	
+	    if (!userEmail.trim()) {
+	        alert("이메일을 입력해주세요.");
+	        return false;
+	    }
+	
+	    const url = "findUserId?userEmail=" + encodeURIComponent(userEmail);
+	    window.open(url, "", "width=300,height=150,top=0,left=0");
+	}
+</script>
 </body>
 </html>
