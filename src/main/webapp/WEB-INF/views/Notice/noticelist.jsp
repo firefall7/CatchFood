@@ -10,7 +10,7 @@
 <body>
 <jsp:include page="../top.jsp"/>
 
-<h2 style="margin: 0 auto; text-align: center; padding:25px">공지사항</h2>
+<h2>공지사항</h2>
 	<div class="notice-wrapper">
 		<c:if test="${sessionScope.role eq 'admin'}">
 		    <div class="notice-header">

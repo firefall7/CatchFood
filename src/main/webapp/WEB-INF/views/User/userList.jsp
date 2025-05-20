@@ -6,11 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/userlist.css">
 </head>
 <body>
 	<jsp:include page="../top.jsp"/>
 	<h2>회원 리스트(관리자용)</h2>
-	<table border="1">
+	<table class="userlist-table">
 		<tr>
 			<th>회원번호</th>
 			<th>회원 ID</th>
@@ -34,6 +35,8 @@
 		</tr>
 		</c:forEach>
 	</table>
-	<jsp:include page="../footer.jsp"/>
+	<footer>
+		<jsp:include page="../footer.jsp"/>
+	</footer>
 </body>
 </html>

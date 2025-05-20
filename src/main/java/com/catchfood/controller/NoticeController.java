@@ -33,36 +33,20 @@ public class NoticeController {
 	}
 	
 	@RequestMapping("noticeinsert")
-    public String noticeInsert() {//HttpSession session
-//        String role = (String) session.getAttribute("role");
-//
-//        if (role == null || !"admin".equals(role)) {
-//            return "redirect:/access-denied";  // 권한 없으면 접근 차단
-//        }
+    public String noticeInsert() {
+
         return "Notice/noticeinsert";  // 작성 JSP로 이동
     }
 	
 	@RequestMapping("noticewrite")
 	    public String noticeWrite(@ModelAttribute NoticeDto noticeDto) {//HttpSession session
-	        //String adminId = (String) session.getAttribute("userId");
 
-//	        String role = (String) session.getAttribute("role");
-//	        if (adminId == null || !"admin".equals(role)) {
-//	            return "redirect:/access-denied";
-//	        }
-//
-//	        noticeDto.setNoticeAdminId(adminId);
-//	        if (noticeDto.getNoticePinned() == null) {
-//	            noticeDto.setNoticePinned(false);  // 체크 안하면 null로 들어오는 걸 방지
-//	        }
-//	        if (noticeDto.getNoticeActive() == null) {
-//	            noticeDto.setNoticeActive(true);   // 기본 활성화
-//	        }
 			noticeDto.setNoticeAdminId("admin01");
 	        noticedao.noticeInsert(noticeDto);
 
 	        return "redirect:noticelist"; 
 	    }
+	
 	@RequestMapping("noticedetail")
 	public String noticeDetail(@RequestParam("noticeNum") int noticeNum, Model model) {
 

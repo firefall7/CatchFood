@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>관리자용 전체 리스트</title>
+<link rel="stylesheet" href="/css/reservationlist.css">
 </head>
 <body>
 	<jsp:include page="../top.jsp"/>
@@ -35,7 +36,18 @@
 	</tr>
 	</c:forEach>
 	</table>
-	
+	<div class="pagination">
+	        <c:forEach var="i" begin="1" end="${(totalCount / pageSize) + (totalCount % pageSize == 0 ? 0 : 1)}">
+	            <c:choose>
+	                <c:when test="${i == currentPage}">
+	                    <span class="current-page">[${i}]</span>
+	                </c:when>
+	                <c:otherwise>
+	                    <a href="/reservationList?page=${i}">[${i}]</a>
+	                </c:otherwise>
+	            </c:choose>
+	        </c:forEach>
+	    </div>
 	<jsp:include page="../footer.jsp"/>
 </body>
 </html>

@@ -3,6 +3,7 @@ package com.catchfood.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -170,8 +171,16 @@ public class ReservationController {
 	//★★관리자는 여기서 부터★★
 	//예약 리스트(관리자용)
 	@RequestMapping("reservationList")
-	public String list(Model model) {
-		model.addAttribute("lists", reservationDao.reservationList());
+	public String list(@RequestParam(name = "page", defaultValue = "1") int page,Model model) {
+	    
+		int pageSize = 10;                         
+	    int offset = (page - 1) * pageSize;  
+	    int totalCount = reservationDao.reservationCount();
+	    
+		model.addAttribute("lists", reservationDao.reservationpage(offset, pageSize));
+	    model.addAttribute("currentPage", page);
+	    model.addAttribute("pageSize", pageSize);
+	    model.addAttribute("totalCount", totalCount);
 		return "Reservation/reservationList";
 	}
 	

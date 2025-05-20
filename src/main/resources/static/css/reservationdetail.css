@@ -1,0 +1,46 @@
+	@charset "UTF-8";
+	
+	body {
+	  font-family: 'Noto Sans KR', sans-serif;
+	  background-color: #f9f9f9;
+	  margin: 0;
+	  padding: 0;
+	}
+	
+	h3, h4 {
+	  text-align: center;
+	  margin-top: 30px;
+	  color: #333;
+	}
+	
+	.detail-table, .menu-table {
+	  width: 50%;
+	  margin: 20px auto;
+	  border-collapse: collapse;
+	  background-color: #fff;
+	  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	  border-radius: 12px;
+	  overflow: hidden;
+	}
+	
+	.detail-table th, .menu-table th {
+	  background-color: #f2f2f2;
+	  padding: 12px;
+	  text-align: left;
+	  border-bottom: 1px solid #ddd;
+	  width: 30%;
+	}
+	
+	.detail-table td, .menu-table td {
+	  padding: 12px;
+	  text-align: left;
+	  border-bottom: 1px solid #eee;
+	}
+	
+	.menu-table th {
+	  text-align: center;
+	}
+	
+	.menu-table td {
+	  text-align: center;
+	}

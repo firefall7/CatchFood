@@ -1,0 +1,39 @@
+@charset "UTF-8";
+	
+	body {
+	    background-color: #f9f9f9;
+	}
+
+	h2{
+		margin: 0 auto; 
+		text-align: center;
+		padding:25px
+	}
+	
+	.userlist-table{
+		width: 100%;
+	    border-collapse: collapse;
+	    font-size: 14px;
+	    border-radius: 12px;
+	    overflow: hidden;	
+	    margin-bottom:200px;
+	}
+	
+	.userlist-table th {
+	    background-color: #f2f2f2;
+	    font-weight: bold;
+	    padding: 12px;
+	    border-bottom: 1px solid #ddd;
+	    text-align: center;
+	}
+		
+	.userlist-table td{
+		padding: 12px;
+	    text-align: center;
+	    border-bottom: 1px solid #eee;
+	}
+	
+	.userlist-table tr:hover {
+	    background-color: #fdf4ec;
+	}
+	

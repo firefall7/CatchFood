@@ -66,22 +66,22 @@
 		<jsp:include page="../footer.jsp"/>
 		
 		<script>
-		document.addEventListener("DOMContentLoaded", () => {
-		    document.querySelectorAll('.slide-btn').forEach(button => {
-		        button.addEventListener('click', function () {
-		            const direction = parseInt(this.dataset.dir);
-		            const slider = this.closest('.slider');
-		            const slides = slider.querySelectorAll('.slide-img');
-		
-		            let currentIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
-		
-		            slides[currentIndex].classList.remove('active');
-		
-		            let newIndex = (currentIndex + direction + slides.length) % slides.length;
-		            slides[newIndex].classList.add('active');
-		        });
-		    });
-		});
+			document.addEventListener("DOMContentLoaded", () => {
+			    document.querySelectorAll('.slide-btn').forEach(button => {
+			        button.addEventListener('click', function () {
+			            const direction = parseInt(this.dataset.dir);
+			            const slider = this.closest('.slider');
+			            const slides = slider.querySelectorAll('.slide-img');
+			
+			            let currentIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
+			
+			            slides[currentIndex].classList.remove('active');
+			
+			            let newIndex = (currentIndex + direction + slides.length) % slides.length;
+			            slides[newIndex].classList.add('active');
+			        });
+			    });
+			});
 		</script>
 		
 	</body>
