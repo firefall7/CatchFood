@@ -12,7 +12,7 @@
 
 <h2 style="margin: 0 auto; text-align: center; padding:25px">공지사항</h2>
 
-<c:if test="${not empty sessionScope.userId and sessionScope.role eq 'admin'}">
+<c:if test="${sessionScope.role eq 'admin'}">
     <div style="margin: 16px;">
         <a href="/noticeinsert">
             <button class="write-btn">공지사항 작성</button>

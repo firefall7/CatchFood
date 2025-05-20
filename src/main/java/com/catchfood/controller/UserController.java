@@ -69,7 +69,7 @@ public class UserController {
 	    	UserDto loginUser = userService.login(userId, userPasswd);
 	    	if (loginUser != null) {
 	    		session.setAttribute("loginUser", loginUser); // 세션유지 
-	    		
+	    		session.setAttribute("role", loginUser.getRole());
 	    		//저장된 리다이렉트 경로
 	            String redirectUrl = (String) session.getAttribute("redirectAfterLogin");
 	            if (redirectUrl != null) {

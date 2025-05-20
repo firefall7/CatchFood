@@ -55,7 +55,7 @@
 		
 		            <div class="review-footer">
 		                <span>${fn:substring(dto.reviewDay.toString(), 0, 10)}</span>
-		                <c:if test="${sessionScope.loginUser.role == 'admin'}">
+		                <c:if test="${sessionScope.role eq 'admin'}">
    						 <a href="/reviewdelete?reviewNum=${dto.reviewNum}" class="review-delete">리뷰 삭제</a>
 						</c:if>
 		            </div>

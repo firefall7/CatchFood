@@ -37,11 +37,12 @@
 	     	<a href="noticelist">공지사항</a>
 	       	<a href="reservation">예약하기</a>
 	       	<a href="review">리뷰리스트</a>
-	       	<a href="menulist">메뉴 리스트</a>
-	       	<a href="mybasket">예약 현황</a>
-	       	<a href="informationUpdate">마이페이지</a>
-	       
-	        <c:if test="${sessionScope.userRole eq 'admin'}">
+	       	<a href="menulist">메뉴 리스트</a>       	
+			<c:if test="${sessionScope.loginUser.role eq 'user' or sessionScope.loginUser.role eq 'admin'}">
+				<a href="mybasket">예약 현황</a>
+			    <a href="informationUpdate">마이페이지</a>
+			</c:if>
+	        <c:if test="${sessionScope.role eq 'admin'}">
 	        	<a href="menuinsert">메뉴 작성</a>
 	       		<a href="reservationList">예약 리스트(관리자용)</a>
 	        	<a href="userList">회원 리스트(관리자용)</a>
