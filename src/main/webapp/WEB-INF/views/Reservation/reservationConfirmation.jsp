@@ -13,7 +13,7 @@
 
 <body>
 <div class="container">
-	
+	<div class="resevation-container" style="margin-bottom:500px">
     <header>
         <jsp:include page="../top.jsp"/>
         <h1>예약 확인</h1>
@@ -65,7 +65,7 @@
             %>
         </p>
         </div>
-    </div>
+        </div>
 
     <p>날짜, 시간, 인원수, 주문내역이 같다면 결제를 눌러주세요.</p>
 
@@ -81,8 +81,10 @@
 
         <button type="submit">결제</button>
     </form>
-
+    </div>
+    </div>
+	<footer>
     <jsp:include page="../footer.jsp"/>
-</div>
+    </footer>
 </body>
 </html>

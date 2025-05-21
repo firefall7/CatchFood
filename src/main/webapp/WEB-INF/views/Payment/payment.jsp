@@ -31,10 +31,10 @@
 	%>
 	</header>
 	
+	<p class="paymentDesc">결제수단을 선택하세요.</p>
 	
-	<div class="payment-container">
+	<div class="payment-container" style="margin-bottom:500px">
 		<div class="payment-form">
-			<label>결제 수단을 선택하세요</label>
 			<div class="row">
 				<div><button onclick="requestPay('kakaopay.TC0ONETIME')">카카오페이</button></div>
 				<div><button onclick="requestPay('tosspay.tosstest')">토스페이</button></div>
@@ -45,7 +45,6 @@
 			</div>
 		</div>
 	</div>
-	
     <script>
       const totalAmount = <%= total %>;
       var IMP = window.IMP;
