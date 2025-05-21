@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+
+* {
+  box-sizing: border-box;
+}
+
 .menu-category {
 	display: none;
 }
@@ -84,16 +89,21 @@ button.selected {
 
 .menu-category td {
   padding: 10px;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 /* 메뉴 이미지 */
 .menu-category img {
-  width: 100px;
-  height: auto;
+  width: 150px;             /* 고정 너비 */
+  height: 120px;            /* 고정 높이 */
+  object-fit: cover;        /* 고정 박스를 꽉 채우되, 비율 유지하면서 자름 */
   border-radius: 8px;
-  object-fit: cover;
+  display: block;
+  float: right; 	/* 오른쪽 정렬 추가 */
+  margin-left: 10px; 	/* 텍스트와 간격 */
 }
+
+
 
 /* 메뉴 이름 강조 */
 .menu-category label {
@@ -108,6 +118,7 @@ button.selected {
   text-align: right;
   font-weight: bold;
 }
+
 
 /* 요청사항 텍스트 박스 */
 textarea {

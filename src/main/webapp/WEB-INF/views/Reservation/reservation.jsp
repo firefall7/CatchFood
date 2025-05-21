@@ -73,7 +73,7 @@
     		<c:forEach var="menu" items="${korean}">
     			<c:set var="total" value="값" />
     			
-				<table border="1" width="300" style="margin-bottom: 10px;">
+				<table width="300" style="margin-bottom: 10px;">
 		            <tr>
 		                <td>
 		                    <label>
@@ -83,8 +83,8 @@
 							<input type="hidden" name="menuName_${menu.menuNum}" value="${menu.menuName}">
 							<input type="hidden" name="menuPrice_${menu.menuNum}" value="${menu.menuPrice}">
 		                </td>
-		                <td rowspan="4">
-		                    <img src="${menu.menuImage}" width="100" onerror="this.style.display='none'">
+		                <td style="width:150px;" rowspan="4">
+		                    <img src="${menu.menuImage}"  onerror="this.style.display='none'">
 		                </td>
 		            </tr>
 		            <tr><td>${menu.menuDescription}</td></tr>
@@ -106,7 +106,7 @@
 		    <c:forEach var="menu" items="${western}">
 		    	<c:set var="total" value="값" />
 		    	
-		        <table border="1" width="300" style="margin-bottom: 10px;">
+		        <table width="300" style="margin-bottom: 10px;">
 		            <tr>
 		                <td>
 		                    <label>
@@ -117,7 +117,7 @@
 							<input type="hidden" name="menuPrice_${menu.menuNum}" value="${menu.menuPrice}">
 		                </td>
 		                <td rowspan="4">
-		                    <img src="${menu.menuImage}" width="100" onerror="this.style.display='none'">
+		                    <img src="${menu.menuImage}" onerror="this.style.display='none'">
 		                </td>
 		            </tr>
 		            <tr><td>${menu.menuDescription}</td></tr>
@@ -134,7 +134,7 @@
 		    <c:forEach var="menu" items="${chinese}">
 		    	<c:set var="total" value="값" />
 		    	
-		        <table border="1" width="300" style="margin-bottom: 10px;">
+		        <table  width="300" style="margin-bottom: 10px;">
 		            <tr>
 		            	<td>
 			            	<label>
@@ -162,7 +162,7 @@
 		    <c:forEach var="menu" items="${japanese}">
 		    	<c:set var="total" value="값" />
 				
-		        <table border="1" width="300" style="margin-bottom: 10px;">
+		        <table width="300" style="margin-bottom: 10px;">
 		            <tr>
 		                <td>
 			            	<label>
@@ -173,7 +173,7 @@
 							<input type="hidden" name="menuPrice_${menu.menuNum}" value="${menu.menuPrice}">
 		                </td>
 		                <td rowspan="4">
-		                    <img src="${menu.menuImage}" width="100" onerror="this.style.display='none'">
+		                    <img src="${menu.menuImage}" onerror="this.style.display='none'">
 		                </td>
 		            </tr>
 		            <tr><td>${menu.menuDescription}</td></tr>

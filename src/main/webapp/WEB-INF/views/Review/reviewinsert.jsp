@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>리뷰작성페이지</title>
 </head>
+<link rel="stylesheet" href="/css/reviewinsert.css">
 <body>
 	<jsp:include page="../top.jsp"/>
 
@@ -21,7 +22,7 @@
 						<option value="2">⭐️⭐️</option>
 						<option value="3">⭐️⭐️⭐️</option>
 						<option value="4">⭐️⭐️⭐️⭐️</option>
-						<option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+						<option value="5" selected>⭐️⭐️⭐️⭐️⭐️</option>
 					</select>
 				</td>
 			</tr>
