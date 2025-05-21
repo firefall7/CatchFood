@@ -4,14 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.catchfood.dao.NoticeDao">
-
-  <select id="noticeList" resultType="com.catchfood.dto.NoticeDto">
-	    select noticeNum,noticeTitle,noticeType,
-	    noticeDate,noticeViewCount,noticePinned
-	    from notice
-	    where noticeActive = true
-	    order by noticePinned desc, noticeDate desc
-  </select>
   
    <insert id="noticeInsert">
     insert into notice (
@@ -58,7 +50,15 @@
 	  order by noticePinned DESC, noticeDate DESC
 	  limit #{offset}, #{pageSize}
 	</select>
-
+	
+	<select id="getRecentNotices" resultType="com.catchfood.dto.NoticeDto">
+	  select noticeNum, noticeTitle, noticeDate
+	  from notice
+	  where noticeActive = 1
+	  order by noticePinned desc, noticeDate desc
+	  limit 3
+	</select>
+	
 	<select id="noticeCount" resultType="int">
 	  select count(*) from notice
 	  where noticeActive = 1

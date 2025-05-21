@@ -82,15 +82,15 @@
     .overlay.active {
       display: block;
     }
-    .content {
-      margin-top: 70px;
-      padding: 0 20px;
-      max-width: 960px;
-      margin-left: auto;
-      margin-right: auto;
-      overflow-x: hidden;
-      box-sizing: border-box;
-    }
+	.content {
+	  margin-top: 20px; /* 또는 10px 등 더 작게 설정 */
+	  padding: 0 20px;
+	  max-width: 960px;
+	  margin-left: auto;
+	  margin-right: auto;
+	  overflow-x: hidden;
+	  box-sizing: border-box;
+	}
     .section-title {
       font-size: 22px;
       font-weight: bold;
@@ -114,33 +114,13 @@
         display: none;
       }
     }
-	.main-wrapper {
-	  display: flex;
-	  flex-direction: column;
-	  align-items: flex-start;   /* 왼쪽 정렬 */
-	  text-align: left;          /* 텍스트 왼쪽 정렬 */
-	  margin-top: 20px;          /* 필요 시 조절 */
-	  margin-bottom: 40px;
-	  padding-left: 20px;        /* 왼쪽 여백 약간 주기 */
-	}
-	
-	.maincontent h2 {
-	  font-size: 32px;
-	  font-weight: bold;
-	  margin: 0;
-	}
-	
-	.maincontent p {
-	  font-size: 20px;
-	  margin: 0;
-	  margin-top: 5px;
-	}
+
 
 	.main-banner-slider {
 	  position: relative;
 	  width: 100%;
 	  max-width: 800px;
-	  margin: 30px auto;
+	  margin: 0px auto 30px auto;
 	  overflow: hidden;
 	  border-radius: 12px;
 	  background-color: #fff;
@@ -177,3 +157,91 @@
 	.banner-pagination:empty {
      display: none;
    }
+	   .info-section {
+	  max-width: 800px;
+	  margin: 40px auto;
+	  padding: 20px;
+	  background: #fff;
+	  border-radius: 12px;
+	  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+	}
+
+	.info-section h3 {
+	  font-size: 18px;
+	  font-weight: bold;
+	  margin-bottom: 10px;
+	}
+	
+	.info-section ul {
+	  list-style: none;
+	  padding-left: 0;
+	  margin: 0;
+	}
+	
+	.info-section li {
+	  margin-bottom: 8px;
+	  font-size: 15px;
+	}
+	
+	.info-section a {
+	  text-decoration: none;
+	  color: #3333cc;
+	}
+	
+	.info-section a:hover {
+	  text-decoration: underline;
+	}
+	
+	.notice-preview-wrapper {
+	  max-width: 800px;
+	  margin: 20px auto 10px auto;
+	  padding: 20px 30px;
+	  background: #ffffff;
+	  border-radius: 16px;
+	  border: 1px solid #e0e0e0;
+	  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+	  box-sizing: border-box;
+	}
+	
+	.notice-preview-wrapper h3 {
+	  font-size: 18px;
+	  color: #212121;
+	  margin-bottom: 14px;
+	  font-weight: 700;
+	  border-left: 4px solid #ff5252;
+	  padding-left: 10px;
+	}
+	
+	.notice-preview-wrapper ul {
+	  list-style: none;
+	  padding: 0;
+	  margin: 0;
+	}
+	
+	.notice-preview-wrapper li {
+	  margin-bottom: 10px;
+	  font-size: 16px;
+	  line-height: 1.5;
+	}
+	
+	.notice-preview-wrapper a {
+	  font-weight: 600;
+	  font-size: 17px;
+	  color: #1976d2;
+	  text-decoration: none;
+	  transition: all 0.2s ease-in-out;
+	}
+	
+	.notice-preview-wrapper a:hover {
+	  text-decoration: underline;
+	  color: #0d47a1;
+	}
+	
+	.notice-preview-wrapper span {
+	  font-size: 13px;
+	  color: gray;
+	  margin-left: 8px;
+}
+	.main-banner-slider {
+	  margin: 30px auto 50px; /* 하단 여백을 살짝 늘림 */
+	}
