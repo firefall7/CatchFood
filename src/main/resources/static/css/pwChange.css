@@ -1,14 +1,24 @@
 @charset "UTF-8";
-.pwChange {
-    width: fit-content;
-    margin: 50px auto;
-    padding: 30px;
-    text-align: left;
+
+.pwChange-wrapper {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-h2 {
-    text-align: center;
+.pwChange-sub {
+    font-size: 14px;
+    color: #666;
     margin-bottom: 30px;
+}
+
+.pwChange-box {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 35px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    text-align: left;
 }
 
 form {
@@ -16,13 +26,21 @@ form {
     flex-direction: column;
 }
 
-input[type="password"] {
-    padding: 10px;
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="password"],
+input[type="text"] {
+    padding: 10px 35px 10px 10px;
     margin-bottom: 15px;
     width: 350px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
+    box-sizing: border-box;
 }
 
 input[type="button"] {
@@ -39,4 +57,20 @@ input[type="button"] {
 
 input[type="button"]:hover {
     background-color: #e04e52;
+}
+
+/* 눈 아이콘 포함된 비밀번호 입력 박스 구조 */
+.pw-input-wrapper {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.pw-input-wrapper i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 16px;
 }

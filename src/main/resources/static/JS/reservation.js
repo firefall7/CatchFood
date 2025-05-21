@@ -34,16 +34,16 @@ document.addEventListener("DOMContentLoaded", function () {
 		    
 	document.querySelectorAll(".people").forEach(button => {
 		button.addEventListener("click", function () {
+			const reservationDateValue = document.getElementById("reservationDate").value;
 			
+			if (!reservationDateValue) {
+				alert("날짜와 시간을 먼저 선택해주세요.");
+				return;
+			}
+						
 			document.querySelectorAll(".people").forEach(btn => btn.classList.remove("selected"));
 			this.classList.add("selected");
 			
-			const reservationDateValue = document.getElementById("reservationDate").value;
-			if (!reservationDateValue) {
-				alert("날짜와 시간을 먼저 선택해주세요.");
-			    return;
-			}
-		
 			const people = this.value;
 			document.getElementById("reservationNumber").value = people;
 		
@@ -108,8 +108,20 @@ document.addEventListener("DOMContentLoaded", function () {
 		
 		
 	document.querySelectorAll('input[name="selectedMenus"]').forEach(cb => {
-		cb.addEventListener("change", updateMenuHiddenFields);
+		cb.addEventListener("change", function () {
+			const reservationDate = document.getElementById("reservationDate").value;
+			const reservationNumber = document.getElementById("reservationNumber").value;
+
+			if (!reservationDate || !reservationNumber) {
+				alert("위 항목을 먼저 선택해주세요.");
+				cb.checked = false; // 체크 해제
+				return;
+			}
+
+			updateMenuHiddenFields();
+		});
 	});
+
 	
 	
 	document.querySelectorAll('input[type="number"][name^="count_"]').forEach(input => {
