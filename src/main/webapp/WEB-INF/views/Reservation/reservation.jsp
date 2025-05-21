@@ -90,8 +90,15 @@
 		            <tr><td>${menu.menuDescription}</td></tr>
 		            <tr><td>${menu.menuPrice}원</td></tr>
 		            <tr>
-		                <td>수량: <input type="number" name="menuCount_${menu.menuNum}" value="1" min="1"></td>
-		            </tr>
+					  <td>
+					    수량:
+					    <div class="quantity-container">
+					      <button type="button" class="qty-btn minus">-</button>
+					      <input type="text" name="menuCount_${menu.menuNum}" class="qty-input" value="1" readonly>
+					      <button type="button" class="qty-btn plus">+</button>
+					    </div>
+					  </td>
+					</tr>
         		</table>
     		</c:forEach>
 		</div>
@@ -123,8 +130,15 @@
 		            <tr><td>${menu.menuDescription}</td></tr>
 		            <tr><td>${menu.menuPrice}원</td></tr>
 		            <tr>
-		               <td>수량: <input type="number" name="menuCount_${menu.menuNum}" value="1" min="1"></td>
-		            </tr>
+					  <td>
+					    수량:
+					    <div class="quantity-container">
+					      <button type="button" class="qty-btn minus">-</button>
+					      <input type="text" name="menuCount_${menu.menuNum}" class="qty-input" value="1" readonly>
+					      <button type="button" class="qty-btn plus">+</button>
+					    </div>
+					  </td>
+					</tr>
 		        </table>
 		    </c:forEach>
 		</div>
@@ -151,8 +165,15 @@
 		            <tr><td>${menu.menuDescription}</td></tr>
 		            <tr><td>${menu.menuPrice}원</td></tr>
 		            <tr>
-		                <td>수량: <input type="number" name="menuCount_${menu.menuNum}" value="1" min="1"></td>
-		            </tr>
+					  <td>
+					    수량:
+					    <div class="quantity-container">
+					      <button type="button" class="qty-btn minus">-</button>
+					      <input type="text" name="menuCount_${menu.menuNum}" class="qty-input" value="1" readonly>
+					      <button type="button" class="qty-btn plus">+</button>
+					    </div>
+					  </td>
+					</tr>
 		        </table>
 		    </c:forEach>
 		</div>
@@ -179,8 +200,15 @@
 		            <tr><td>${menu.menuDescription}</td></tr>
 		            <tr><td>${menu.menuPrice}원</td></tr>
 		            <tr>
-		                <td>수량: <input type="number" name="menuCount_${menu.menuNum}" value="1" min="1"></td>
-		            </tr>
+					  <td>
+					    수량:
+					    <div class="quantity-container">
+					      <button type="button" class="qty-btn minus">-</button>
+					      <input type="text" name="menuCount_${menu.menuNum}" class="qty-input" value="1" readonly>
+					      <button type="button" class="qty-btn plus">+</button>
+					    </div>
+					  </td>
+					</tr>
 		        </table>
 		    </c:forEach>
 		</div>

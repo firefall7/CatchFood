@@ -161,3 +161,21 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.quantity-container').forEach(container => {
+    const input = container.querySelector('.qty-input');
+    const plusBtn = container.querySelector('.plus');
+    const minusBtn = container.querySelector('.minus');
+
+    plusBtn.addEventListener('click', () => {
+      input.value = parseInt(input.value) + 1;
+    });
+
+    minusBtn.addEventListener('click', () => {
+      if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+      }
+    });
+  });
+});
