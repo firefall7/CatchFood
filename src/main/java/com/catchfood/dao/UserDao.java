@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import com.catchfood.dto.ReservationDto;
 import com.catchfood.dto.UserDto;
 
 @Mapper
@@ -24,12 +25,11 @@ public interface UserDao {
     //회원 비밀번호 수정
     int userPasswordChange(@Param("userNum") int userNum, @Param("userPasswd") String userPasswd);
     
-    //회원 리스트
-    List<UserDto> userList();
-    
     //아이디 찾기(이메일)
     public String findUserIdByEmail(String userEmail);
     
-   
+    //회원 리스트 (페이징처리)
+  	public List<UserDto> userListPage(@Param("offset") int offset, @Param("pageSize") int pageSize);
   
+  	int userListCount();
 }

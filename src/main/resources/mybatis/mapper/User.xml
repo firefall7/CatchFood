@@ -37,10 +37,15 @@
 	    	 where userNum = #{userNum}
 	    </update>
 	    
-	    <!-- 회원 리스트 -->
-	    <select id="userList" resultType="com.catchfood.dto.UserDto">
-	    	select * from user
+	    <!-- 회원 리스트 페이지(페이징처리)-->
+	    <select id="userListPage" resultType="com.catchfood.dto.UserDto">
+	    	select * from user order by userNum desc limit #{offset}, #{pageSize}
 	    </select>
+	    
+	    <!-- 개수 컨택(페이징)-->
+		<select id="userListCount" resultType="int">
+	    	select count(*) from user
+		</select>
 	    
 	    <!-- 아이디 찾기 -->
 		<select id="findUserIdByEmail" resultType="string">

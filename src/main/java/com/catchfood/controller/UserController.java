@@ -140,10 +140,18 @@ public class UserController {
 	    }
 
 
-	   //회원 리스트
+	   //회원 리스트(관리자용)
 	   @RequestMapping("userList")
-	   public String userlist(Model model) {
-		   model.addAttribute("lists", userDao.userList());
+	   public String userlist(@RequestParam(name = "page", defaultValue = "1") int page, Model model) {
+		   
+		   int pageSize = 10;                         
+		   int offset = (page - 1) * pageSize;  
+		   int totalCount = userDao.userListCount();
+		   
+		   model.addAttribute("lists", userDao.userListPage(offset, pageSize));
+		   model.addAttribute("currentPage", page);
+		   model.addAttribute("pageSize", pageSize);
+		   model.addAttribute("totalCount", totalCount);
 		   return "User/userList";
 	   }
 	   

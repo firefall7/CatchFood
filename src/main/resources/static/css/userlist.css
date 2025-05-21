@@ -37,3 +37,30 @@
 	    background-color: #fdf4ec;
 	}
 	
+	.pagination {
+	    text-align: center;
+	    margin: 30px 0 50px 0;
+	}
+	
+	.pagination a {
+	    display: inline-block;
+	    margin: 0 8px;
+	    color: #444;
+	    padding: 6px 12px;
+	    border-radius: 6px;
+	    background-color: #eee;
+	    text-decoration: none;
+	}
+	
+	.pagination a:hover {
+	    background-color: #ddd;
+	}
+	
+	.pagination .current-page {
+	    background-color: #ff5a5f;
+	    color: #fff;
+	    font-weight: bold;
+	    padding: 6px 12px;
+	    border-radius: 6px;
+	}
+	
