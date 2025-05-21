@@ -241,7 +241,61 @@
 	  font-size: 13px;
 	  color: gray;
 	  margin-left: 8px;
-}
+	}
 	.main-banner-slider {
 	  margin: 30px auto 50px; /* 하단 여백을 살짝 늘림 */
 	}
+	#entry-overlay {
+	  position: fixed;
+	  top: 0; left: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  background-color:  #FF5A5F;
+	  color: white;
+	  z-index: 9999;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	  animation: fadeOutOverlay 2s ease-out 2.5s forwards;
+	}
+	
+	.entry-image {
+	  width: 200px;
+	  margin-bottom: 15px;
+	}
+	
+	.entry-logo {
+	  font-size: 3rem;
+	  font-weight: bold;
+	  animation: zoomIn 1.5s ease;
+	}
+	
+	.entry-sub {
+	  font-size: 1.2rem;
+	  margin-top: 10px;
+	  animation: fadeIn 2s ease;
+	}
+	
+	@keyframes zoomIn {
+	  from {
+	    transform: scale(0.8);
+	    opacity: 0;
+	  }
+	  to {
+	    transform: scale(1);
+	    opacity: 1;
+	  }
+	}
+	
+	@keyframes fadeIn {
+	  from { opacity: 0; }
+	  to { opacity: 1; }
+	}
+	
+	@keyframes fadeOutOverlay {
+	  to {
+	    opacity: 0;
+	    visibility: hidden;
+	  }
+}

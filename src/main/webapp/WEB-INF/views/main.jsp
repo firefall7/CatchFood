@@ -10,10 +10,14 @@
    	<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+	<div id="entry-overlay">
+		<img src="/images/logo 접시만.png" alt="CatchFood Logo" class="entry-image">
+	  <div class="entry-logo">CaTchFood</div>
+	  <p class="entry-sub">다양한 음식을 즐기는 곳</p>
+	</div>
 	<jsp:include page="top.jsp"/>
-	
-		<div class="content">
 		
+		<div class="content">	
 		<div class="main-banner-slider">
 		  <div class="banner-slide active">
 		    <img src="/images/banner1.png" alt="배너1" style="display: block;">
@@ -68,6 +72,11 @@
 	    showSlide(currentSlide);
 	    setInterval(nextSlide, 4000); // 4초마다 전환
 	  });
+
+	  setTimeout(() => {
+		    document.getElementById('intro-overlay').style.display = 'none';
+		  }, 2500);
 	</script>
+
 </body>
 </html>
