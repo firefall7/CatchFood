@@ -50,18 +50,17 @@
 	  </div>
 
   <jsp:include page="footer.jsp"/>
+	 <c:url var="popupUrl" value="/event" />
 	<script>
 	  document.addEventListener("DOMContentLoaded", function () {
 	    let currentSlide = 0;
 	    const slides = document.querySelectorAll('.banner-slide');
-	    //const pagination = document.getElementById('banner-pagination');
 	
 	    function showSlide(index) {
 	      slides.forEach((slide, i) => {
 	        slide.classList.remove('active');
 	        if (i === index) slide.classList.add('active');
 	      });
-	      //pagination.textContent = `${index + 1} / ${slides.length}`;
 	    }
 	
 	    function nextSlide() {
@@ -70,13 +69,30 @@
 	    }
 	
 	    showSlide(currentSlide);
-	    setInterval(nextSlide, 4000); // 4초마다 전환
+	    setInterval(nextSlide, 4000); // 배너 자동 전환
+	
+	    // 팝업 로직: 인트로 끝나고 실행
+	    setTimeout(() => {
+	      const overlay = document.getElementById('entry-overlay');
+	      if (overlay) overlay.style.display = 'none';
+	
+	      const popupUntil = localStorage.getItem('bossEventPopupUntil');
+	      const now = new Date().getTime();
+	      const popupUrl = "<c:url value='/event' />"; // 또는 "/event"
+	
+	      if (!popupUntil || now > popupUntil) {
+	        const newWindow = window.open(
+	          popupUrl,
+	          'bossEventPopup',
+	          'width=510,height=310,left=300,top=100'
+	        );
+	
+	        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+	          alert("팝업이 차단되었습니다. 브라우저 설정에서 허용해주세요.");
+	        }
+	      }
+	    }, 2500); // 인트로 후 2.5초 뒤
 	  });
-
-	  setTimeout(() => {
-		    document.getElementById('intro-overlay').style.display = 'none';
-		  }, 2500);
 	</script>
-
 </body>
 </html>

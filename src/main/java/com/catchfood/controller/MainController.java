@@ -21,6 +21,9 @@ public class MainController {
 		 model.addAttribute("mainNotices", noticedao.getRecentNotices());
 		return "main";
 	}
-	
+	@RequestMapping("event")
+	public String event() {
+	    return "Popup/bossEvent"; 
+	}
 	
 }
