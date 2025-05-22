@@ -98,7 +98,7 @@
 	        const newWindow = window.open(
 	          popupUrl,
 	          'bossEventPopup',
-	          'width=510,height=310,left=300,top=100'
+	          'width=510,height=330,left=0,top=0'
 	        );
 	
 	        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
