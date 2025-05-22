@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.catchfood.dao.UserDao;
 import com.catchfood.dto.UserDto;
@@ -125,16 +126,26 @@ public class UserController {
 	    //비밀번호 변경 후 -> main으로 
 	    @RequestMapping("informationChange")
 	    public String resetPassword(@RequestParam("newPassword") String newPassword,
-	                                HttpSession session, Model model) {
+	                                HttpSession session, RedirectAttributes redirectAttributes) {
 	        Integer userNum = (Integer) session.getAttribute("resetUserNum");
 
+	        // 🔁 없으면 loginUser에서 가져오기
+	        if (userNum == null) {
+	            UserDto loginUser = (UserDto) session.getAttribute("loginUser");
+	            if (loginUser != null) {
+	                userNum = loginUser.getUserNum();
+	            }
+	        }
+	        
 	        if (userNum != null) {
 	            userService.updatePassword(userNum, newPassword);
 	            session.removeAttribute("resetUserNum");
-	            model.addAttribute("message", "비밀번호가 성공적으로 변경되었습니다.");
+//	            model.addAttribute("message", "비밀번호가 성공적으로 변경되었습니다.");
+	            redirectAttributes.addFlashAttribute("message", "비밀번호가 성공적으로 변경되었습니다.");
 	            return "redirect:/";  //성공 시 홈으로
 	        } else {
-	            model.addAttribute("error", "유효하지 않은 요청입니다.");
+//	            model.addAttribute("error", "유효하지 않은 요청입니다.");
+	        	redirectAttributes.addFlashAttribute("error", "유효하지 않은 요청입니다.");
 	            return "User/passwordChange";  //다시 비밀번호 수정 폼으로 이동
 	        }
 	    }

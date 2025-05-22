@@ -10,6 +10,20 @@
    	<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+	<!-- 비밀번호변경 알림창 -->
+	<c:if test="${not empty message}">
+	  <script>
+	    alert("${message}");
+	  </script>
+	</c:if>
+	
+	<c:if test="${not empty error}">
+	  <script>
+	    alert("${error}");
+	  </script>
+	</c:if>
+
+	
 	<div id="entry-overlay">
 		<img src="/images/logo 접시만.png" alt="CatchFood Logo" class="entry-image">
 	  <div class="entry-logo">CaTchFood</div>
