@@ -60,7 +60,7 @@ public class ReviewController {
                     while (saveFile.exists()) {
                         String name = cleanName.substring(0, cleanName.lastIndexOf('.'));
                         String ext = cleanName.substring(cleanName.lastIndexOf('.'));
-                        String newName = name + "_" + count + ext;
+                        String newName = name + count + ext;
                         saveFile = new File(dir, newName);
                         cleanName = newName;
                         count++;

@@ -62,7 +62,21 @@
 		        </div>
 		  	  </c:forEach>
 			</div>
-		
+		<div class="pagination">
+	        <c:set var="pageSize" value="10" />
+			<c:set var="pageCount" value="${pageSize != 0 ? (totalCount / pageSize) + (totalCount % pageSize == 0 ? 0 : 1) : 1}" />
+			<c:forEach var="i" begin="1" end="${pageCount}">
+	            <c:choose>
+	                <c:when test="${i == currentPage}">
+	                    <span class="current-page">[${i}]</span>
+	                </c:when>
+	                <c:otherwise>
+	                    <a href="/review?page=${i}">[${i}]</a>
+	                </c:otherwise>
+	            </c:choose>
+	        </c:forEach>
+	    </div>
+	</div>
 		<jsp:include page="../footer.jsp"/>
 		
 		<script>
