@@ -42,8 +42,8 @@
 	                    <p class="price">${menu.menuPrice}원</p>
 	                    <c:if test="${sessionScope.role eq 'admin'}">
 	                        <div class="menu-actions">
-	                            <a href="/menudetail?menuNum=${menu.menuNum}">메뉴수정</a> /
-	                            <a href="/menudelete?menuNum=${menu.menuNum}">메뉴삭제</a>
+	                            <a href="/menudetail?menuNum=${menu.menuNum}">메뉴수정</a>/ 
+	                            <a href="/menudelete?menuNum=${menu.menuNum}"> 메뉴삭제</a>
 	                        </div>
 	                    </c:if>
 	                </div>

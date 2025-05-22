@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
-body {
-		font-family: 'Noto Sans KR', sans-serif;
-		background-color: #f9f9f9;
-		margin: 0;
-		padding: 0;
-	}
+	body {
+			font-family: 'Noto Sans KR', sans-serif;
+			background-color: #f9f9f9;
+			margin: 0;
+			padding: 0;
+		}
 
 	.menu-section h3 {
 	  display: block;
@@ -104,15 +104,32 @@ body {
 	}
 
 	.menu-actions {
-		font-size: 13px;
+    margin-top: 10px;
+    font-size: 14px;
 	}
-
+	
 	.menu-actions a {
-		color: #007bff;
-		text-decoration: none;
-		margin-right: 5px;
+	    text-decoration: none;
+	    padding: 6px 12px;
+	    border-radius: 8px;
+	    margin-right: 6px;
+	    color: white;
+	    font-weight: bold;
+	    transition: background-color 0.3s ease;
 	}
-
-	.menu-actions a:hover {
-		text-decoration: underline;
+	
+	.menu-actions a:first-child {
+	    background-color: #4CAF50; /* 수정 버튼 - 녹색 */
+	}
+	
+	.menu-actions a:first-child:hover {
+	    background-color: #45a049;
+	}
+	
+	.menu-actions a:last-child {
+	    background-color: #f44336; /* 삭제 버튼 - 빨간색 */
+	}
+	
+	.menu-actions a:last-child:hover {
+	    background-color: #da190b;
 	}
