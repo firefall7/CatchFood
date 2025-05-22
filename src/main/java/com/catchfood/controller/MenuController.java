@@ -64,12 +64,22 @@ public class MenuController {
 	    String realPath = request.getServletContext().getRealPath(webPath);  
 
 	    if (!file.isEmpty()) {
-	        String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
+	        String fileName = file.getOriginalFilename();  // ✅ 변경: 타임스탬프 제거
+
+	        // 중복 방지를 위한 추가 로직 (선택)
+	        File saveFile = new File(realPath, fileName);
+	        int count = 1;
+	        while (saveFile.exists()) {
+	            String name = fileName.substring(0, fileName.lastIndexOf("."));
+	            String ext = fileName.substring(fileName.lastIndexOf("."));
+	            saveFile = new File(realPath, name + "_" + count + ext);
+	            fileName = name + "_" + count + ext;
+	            count++;
+	        }
 
 	        File dir = new File(realPath);
 	        if (!dir.exists()) dir.mkdirs();
 
-	        File saveFile = new File(dir, fileName);
 	        file.transferTo(saveFile);
 
 	        menudto.setMenuImage(webPath + fileName);  
@@ -104,18 +114,26 @@ public class MenuController {
 	    if (!file.isEmpty()) {
 	        String webPath = "/images/";
 	        String realPath = request.getServletContext().getRealPath(webPath);
-	        String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
+	        String fileName = file.getOriginalFilename(); // ✅ 타임스탬프 제거
+
+	        File saveFile = new File(realPath, fileName);
+	        int count = 1;
+	        while (saveFile.exists()) {
+	            String name = fileName.substring(0, fileName.lastIndexOf("."));
+	            String ext = fileName.substring(fileName.lastIndexOf("."));
+	            saveFile = new File(realPath, name + "_" + count + ext);
+	            fileName = name + "_" + count + ext;
+	            count++;
+	        }
 
 	        File dir = new File(realPath);
 	        if (!dir.exists()) dir.mkdirs();
 
-	        File saveFile = new File(dir, fileName);
 	        file.transferTo(saveFile);
-
 	        menudto.setMenuImage(webPath + fileName);
-	    } else {
-	        menudto.setMenuImage(original.getMenuImage());
-	    }
+		    } else {
+		        menudto.setMenuImage(original.getMenuImage());
+		    }
 
 	    menudao.updatemenu(menudto);
 	    return "redirect:menulist";
