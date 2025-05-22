@@ -35,31 +35,40 @@ public class ReviewController {
         return "Review/reviewinsert";
     }
 
-    @PostMapping("writer")
+    @RequestMapping("writer")
     public String reviewInsert(@ModelAttribute ReviewDto dto,
                                @RequestParam("imageFile") MultipartFile[] files,
                                HttpSession session,
                                HttpServletRequest request,
                                Model model) {
-        
+
         String webPath = "/images/";
         String realPath = request.getServletContext().getRealPath(webPath);
         StringBuilder imagePaths = new StringBuilder();
 
+        File dir = new File(realPath);
+        if (!dir.exists()) dir.mkdirs();
+
         for (MultipartFile file : files) {
             if (!file.isEmpty()) {
                 try {
-                	String originalName = file.getOriginalFilename();
-                	String cleanName = originalName.replaceAll("[^가-힣a-zA-Z0-9._-]", "_");
-                	String fileName = System.currentTimeMillis() + "_" + cleanName;
+                    String originalName = file.getOriginalFilename();
+                    String cleanName = originalName.replaceAll("[^가-힣a-zA-Z0-9._-]", "_");
 
-                    File dir = new File(realPath);
-                    if (!dir.exists()) dir.mkdirs();
+                    File saveFile = new File(dir, cleanName);
+                    int count = 1;
+                    while (saveFile.exists()) {
+                        String name = cleanName.substring(0, cleanName.lastIndexOf('.'));
+                        String ext = cleanName.substring(cleanName.lastIndexOf('.'));
+                        String newName = name + "_" + count + ext;
+                        saveFile = new File(dir, newName);
+                        cleanName = newName;
+                        count++;
+                    }
 
-                    File saveFile = new File(dir, fileName);
                     file.transferTo(saveFile);
+                    imagePaths.append(webPath).append(cleanName).append(",");
 
-                    imagePaths.append(webPath).append(fileName).append(",");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -67,7 +76,7 @@ public class ReviewController {
         }
 
         if (!imagePaths.isEmpty()) {
-            imagePaths.setLength(imagePaths.length() - 1); 
+            imagePaths.setLength(imagePaths.length() - 1); // 마지막 쉼표 제거
             dto.setReviewImage(imagePaths.toString());
         }
 
