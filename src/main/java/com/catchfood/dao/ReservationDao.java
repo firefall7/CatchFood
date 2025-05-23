@@ -27,5 +27,6 @@ public interface ReservationDao {
 	public List<ReservationDto> reservationpage(@Param("offset") int offset, @Param("pageSize") int pageSize);
 	
 	int reservationCount();
+	
 }	
 	

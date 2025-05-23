@@ -11,4 +11,5 @@ public class PaymentController {
 		
 		return "Payment/payment";
 	}
+	
 }

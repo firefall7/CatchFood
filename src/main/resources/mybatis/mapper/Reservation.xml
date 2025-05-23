@@ -47,4 +47,5 @@
 		insert into reservation(reservationDate, reservationNumber, reservationRequest, userNum)
 		 values(#{reservationDate}, #{reservationNumber}, #{reservationRequest}, #{userNum})
 	</insert>
+	
 </mapper>

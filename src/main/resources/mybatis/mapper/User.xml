@@ -52,5 +52,11 @@
 		  select userId from user where userEmail = #{userEmail}
 		</select>
 	    
+	    <select id="findByReservationNum" resultType="com.catchfood.dto.UserDto">
+		  SELECT u.userEmail, u.userName
+		  FROM reservation r
+		  JOIN user u ON r.userNum = u.userNum
+		  WHERE r.reservationNum = #{reservationNum}
+		</select>
 		
 	</mapper>

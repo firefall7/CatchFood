@@ -3,7 +3,6 @@ package com.catchfood.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,11 +12,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.catchfood.dao.BasketDao;
 import com.catchfood.dao.MenuDao;
+import com.catchfood.dao.PaymentDao;
 import com.catchfood.dao.ReservationDao;
 import com.catchfood.dao.UserDao;
 import com.catchfood.dto.BasketViewDto;
 import com.catchfood.dto.ReservationDto;
 import com.catchfood.dto.UserDto;
+import com.catchfood.service.EmailService;
+import com.catchfood.service.IamportService;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -36,7 +38,15 @@ public class ReservationController {
 	@Autowired
 	UserDao userDao; 
 
+	@Autowired
+	PaymentDao paymentdao; 
+
+	@Autowired
+	IamportService iamportService; // 아임포트 환불 처리 서비스
 	
+	@Autowired
+	EmailService emailService;
+
 	//예약 폼
 	@RequestMapping("reservation")
 	public String reservationForm(HttpSession session, Model model) {	
@@ -126,17 +136,15 @@ public class ReservationController {
 	@PostMapping("/reservation/complete")
 	public String reservationComplete(HttpServletRequest request) {
 
-	    //String userId = request.getParameter("userId");
-	    //int userNum = 1; // ⚠️ 지금은 로그인 구현 안 되었으므로 임시 userNum
-		String userId = request.getParameter("userId");
-		int userNum = userDao.findByUserId(userId).getUserNum(); // ← 이게 실제 사용
-
+	    String userId = request.getParameter("userId");
+	    int userNum = userDao.findByUserId(userId).getUserNum();
 
 	    // 예약 정보
 	    String reservationDate = request.getParameter("reservationDate");
 	    int reservationNumber = Integer.parseInt(request.getParameter("reservationNumber"));
 	    String reservationRequest = request.getParameter("reservationRequest");
-	    // DTO 생성
+	    String impUid = request.getParameter("imp_uid"); // ✅ imp_uid 받기
+
 	    ReservationDto reservationDto = new ReservationDto();
 	    reservationDto.setReservationDate(reservationDate);
 	    reservationDto.setReservationNumber(reservationNumber);
@@ -163,9 +171,15 @@ public class ReservationController {
 	        basketDao.BasketInsert(basketDto);
 	    }
 
+	    // ✅ 결제 정보 저장
+	    com.catchfood.dto.PaymentDto paymentdto = new com.catchfood.dto.PaymentDto();
+	    paymentdto.setReservationNum(reservationNum);
+	    paymentdto.setPaymentStatus("완료");
+	    paymentdto.setImpUid(impUid);
+	    paymentdao.insertPayment(paymentdto);
+
 	    return "redirect:/";
 	}
-
 	
 	
 	//★★관리자는 여기서 부터★★
@@ -196,9 +210,30 @@ public class ReservationController {
 	
 	//예약 삭제
 	@RequestMapping("reservationDelete")
-	public String delete(ReservationDto reservationDto) {
-		reservationDao.reservationDelete(reservationDto.getReservationNum());
-		return "redirect:reservationList";
+	public String delete(@RequestParam("reservationNum") int reservationNum) {
+	    try {
+	        // 1. imp_uid 조회 (payment 테이블에서)
+	        String impUid = paymentdao.findImpUidByReservationNum(reservationNum);
+
+	        // 2. 아임포트 서버에 환불 요청
+	        if (impUid != null && !impUid.isEmpty()) {
+	            iamportService.cancelPayment(impUid); // 실제 환불
+	        }
+
+	        // 3. 결제 상태를 "환불"로 DB에 반영
+	        paymentdao.deleteByReservationNum(reservationNum);
+	        
+	        UserDto user = userDao.findByReservationNum(reservationNum);
+	        
+	        emailService.sendRefundEmail(user.getUserEmail(), user.getUserName());
+	        // 4. 예약 삭제
+	        reservationDao.reservationDelete(reservationNum);
+
+	    } catch (Exception e) {
+	        e.printStackTrace(); // 또는 로깅
+	    }
+
+	    return "redirect:reservationList";
 	}
 	
 	

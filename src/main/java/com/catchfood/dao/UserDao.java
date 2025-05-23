@@ -32,4 +32,6 @@ public interface UserDao {
   	public List<UserDto> userListPage(@Param("offset") int offset, @Param("pageSize") int pageSize);
   
   	int userListCount();
+  	
+  	UserDto findByReservationNum(@Param("reservationNum") int reservationNum);
 }

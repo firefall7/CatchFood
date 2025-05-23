@@ -71,6 +71,7 @@
             form.action = "/reservation/complete";
 
             form.innerHTML = `
+              <input type="hidden" name="imp_uid" value="${rsp.imp_uid}">
               <input type="hidden" name="userId" value='<%= userId %>'>
               <input type="hidden" name="reservationDate" value='<%= reservationDate %>'>
               <input type="hidden" name="reservationNumber" value='<%= reservationNumber %>'>
