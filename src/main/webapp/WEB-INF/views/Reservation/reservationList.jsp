@@ -32,7 +32,7 @@
 		<td>${dto.reservationRequest}</td>
 		<!-- <td>${dto.reservationNow.toString().substring(0,10)} ${dto.reservationNow.toString().substring(11,19)}</td>-->
 		<td>${dto.userNum}</td>
-		<td><a href="reservationDelete?reservationNum=${dto.reservationNum}">X</a></td>	
+		<td><a href="reservationDelete?reservationNum=${dto.reservationNum}">환불</a></td>	
 	</tr>
 	</c:forEach>
 	</table>

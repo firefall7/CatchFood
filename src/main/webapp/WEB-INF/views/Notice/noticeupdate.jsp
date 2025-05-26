@@ -13,9 +13,9 @@
 	<h2 class="page-title">공지사항 수정</h2>
 	
 	<div class="form-container">
-	    <form method="post" action="/noticeupdate">
+	    <form method="post" action="/noticeupdateok">
 	        <input type="hidden" name="noticeNum" value="${notice.noticeNum}">
-	        <input type="hidden" name="noticeActive" value="true" />
+	        <input type="hidden" name="noticeActive" value="1" />
 	
 	        <div class="form-group">
 	            <label>제목</label>
@@ -34,7 +34,7 @@
 	            </div>
 	            <div class="row-item checkbox-item">
 	                <label>상단 고정</label>
-	                <input type="checkbox" name="noticePinned" value="true" <c:if test="${notice.noticePinned == 1}">checked</c:if>>
+	                <input type="checkbox" name="noticePinned" value="1" <c:if test="${notice.noticePinned == 1}">checked</c:if>>
 	            </div>
 	        </div>
 	

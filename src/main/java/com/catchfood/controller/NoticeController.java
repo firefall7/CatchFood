@@ -41,7 +41,6 @@ public class NoticeController {
 	@RequestMapping("noticewrite")
 	    public String noticeWrite(@ModelAttribute NoticeDto noticeDto) {//HttpSession session
 
-			noticeDto.setNoticeAdminId("admin01");
 	        noticedao.noticeInsert(noticeDto);
 
 	        return "redirect:noticelist"; 
@@ -77,7 +76,7 @@ public class NoticeController {
 	    }
 
 	    noticedao.noticeUpdate(noticeDto);
-	    return "redirect:/notice/detail?noticeNum=" + noticeDto.getNoticeNum();
+	    return "redirect:/noticedetail?noticeNum=" + noticeDto.getNoticeNum();
 	}
 	
 	@RequestMapping("noticedelete")
