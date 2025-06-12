@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="wrapper">
-	<header>
+	<header> 
 	<jsp:include page="../top.jsp"/>
 
 	<%

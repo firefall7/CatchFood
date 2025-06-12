@@ -20,4 +20,4 @@ public interface ReviewDao {
     public void ReviewDelete(@RequestParam("reviewNum") int reviewNum);
     
   
-}
+} 

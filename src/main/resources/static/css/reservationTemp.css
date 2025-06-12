@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column; /* 추가 */
     
-}
+} 
 
 /*콘텐츠를 감싸는 박스*/
 .container {

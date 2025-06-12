@@ -19,7 +19,7 @@
     document.getElementById(categoryId).classList.add('active');
   }
   window.onload = () => showCategory('korean');
-</script>
+</script> 
 	
 <%-- 한식 --%>
 <div id="korean" class="menu-category">

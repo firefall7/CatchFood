@@ -34,4 +34,4 @@ public interface UserDao {
   	int userListCount();
   	
   	UserDto findByReservationNum(@Param("reservationNum") int reservationNum);
-}
+} 

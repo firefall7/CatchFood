@@ -12,4 +12,4 @@ public class BasketViewDto {
 	    private String menuName;
 	    private int basketCount;
 	    private int basketPTotal;
-}
+} 

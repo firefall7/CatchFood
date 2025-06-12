@@ -22,7 +22,7 @@
 		        font-weight: bold;
 		        background-color: #f8f9fa;
 		        border-bottom: 1px solid #eee;
-		    }
+		    } 
 		
 		    #map {
 		        width: 100%;

@@ -7,4 +7,4 @@ public class CategoryDto {
 	private int categoryNum;
 	private String categoryName;
 	
-}
+} 

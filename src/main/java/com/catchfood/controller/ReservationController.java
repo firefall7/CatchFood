@@ -107,7 +107,7 @@ public class ReservationController {
 	            menuTotalList.add(count * price);
 	            
 	        }
-	    }
+	    } 
 
 	    //DTO 직접 생성
 	    ReservationDto reservationDto = new ReservationDto();

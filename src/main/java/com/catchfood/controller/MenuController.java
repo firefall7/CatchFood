@@ -27,9 +27,9 @@ public class MenuController {
 	    model.addAttribute("korean", menudao.getMenusByCategory(1));
 	    model.addAttribute("western", menudao.getMenusByCategory(2));
 	    model.addAttribute("chinese", menudao.getMenusByCategory(3));
-	    model.addAttribute("japanese", menudao.getMenusByCategory(4));
+	    model.addAttribute("japanese", menudao.getMenusByCategory(4)); 
 	    return "Menu/menulist";
-	}
+	} 
 	
 	@RequestMapping("/menuselect")
 	public String showMenuSelect(@RequestParam("reservationNum") int reservationNum,

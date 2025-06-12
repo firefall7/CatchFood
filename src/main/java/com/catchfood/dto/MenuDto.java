@@ -13,4 +13,4 @@ public class MenuDto {
     private int categoryNum;
     private int menuCount;
     private int menuPTotal;
-}
+} 

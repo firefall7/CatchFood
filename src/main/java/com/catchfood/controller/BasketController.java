@@ -31,5 +31,5 @@ public class BasketController {
 	     model.addAttribute("myreservation", myreservation);
 	     return "Basket/mybasket";
 
-	}
+	} 
 }

@@ -24,5 +24,5 @@ public class EmailService {
         message.setSubject("CatchFood - 환불 완료 안내");
         message.setText("안녕하세요, " + username + "님. 결제가 정상적으로 환불 처리되었습니다.");
         mailSender.send(message);
-    }
+    } 
 }

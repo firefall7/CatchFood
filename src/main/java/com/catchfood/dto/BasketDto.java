@@ -10,4 +10,4 @@ public class BasketDto {
 	private int basketCount;
 	private int basketPTotal;
 	private int reservationNum;
-}
+} 

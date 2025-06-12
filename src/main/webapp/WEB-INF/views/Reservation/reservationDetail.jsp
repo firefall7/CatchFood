@@ -21,7 +21,7 @@
       <th>예약 번호</th>
       <td>${first.reservationNum}</td>
     </tr>
-    <tr>
+    <tr> 
       <th>예약 날짜</th>
       <td>${first.reservationDate.substring(0,10)} ${first.reservationDate.substring(11,16)}</td>
     </tr>

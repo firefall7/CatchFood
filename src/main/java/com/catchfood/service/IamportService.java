@@ -26,7 +26,7 @@ public class IamportService {
         try (OutputStream os = conn.getOutputStream()) {
             os.write(jsonBody.getBytes("UTF-8"));
             os.flush();
-        }
+        } 
 
         BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
         StringBuilder sb = new StringBuilder();

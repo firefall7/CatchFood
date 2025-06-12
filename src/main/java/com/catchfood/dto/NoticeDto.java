@@ -14,4 +14,4 @@ public class NoticeDto {
     private Integer  noticeActive    ;
     private int noticeViewCount ;
     private String noticeAdminId  ;
-}
+} 

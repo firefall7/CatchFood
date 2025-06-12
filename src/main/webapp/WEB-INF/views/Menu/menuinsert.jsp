@@ -20,7 +20,7 @@
 				<td colspan="2">
 					<input type="checkbox" name="menuRecommend" value="1">메뉴추천여부
 				</td>
-			</tr>
+			</tr> 
 			<tr>
 				<td><input type="text" name="menuName" placeholder="메뉴명" required></td>
 				<td>

@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpSession;
 public class UserController {
 	
 		@Autowired
-		UserDao userDao;
+ 		UserDao userDao;
 		
 		@Autowired
 		UserService userService;
@@ -30,7 +30,7 @@ public class UserController {
 	    public String register() {
 	        return "User/register";
 	    }
-	    
+	     
 	    
 	    //회원가입 처리메소드
 	    @RequestMapping("registerProcess")
@@ -62,7 +62,7 @@ public class UserController {
 	    
 	    
 	    //로그인 성공시 -> main
-	    @RequestMapping("loginSuccess")
+	    @RequestMapping("loginSuccess") 
 	    public String loginSuccess( @RequestParam("userId") String userId, 
 	    							@RequestParam("userPasswd") String userPasswd,
 	    							HttpSession session,

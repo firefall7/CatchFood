@@ -14,7 +14,7 @@
 	      <a href="/">
 	      	<img src="/images/logo1.png" alt="CaTchFood 로고">
 	      </a>
-	    </div>
+	    </div> 
 	
 	    <div class="right-section">
 	      <div class="auth-links">

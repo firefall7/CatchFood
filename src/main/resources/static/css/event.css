@@ -1,0 +1,52 @@
+@charset "UTF-8";
+       body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    } 
+
+    .popup-box {
+      width: 450px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .popup-box h3 {
+      margin: 0 0 16px;
+      font-size: 18px;
+      color: #ff5a5f;
+      font-weight: bold;
+    }
+
+    .popup-box img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .popup-box label {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    .close-btn {
+      margin-top: 16px;
+      padding: 8px 20px;
+      background-color: #ff5a5f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      background-color: #e0484c;
+    }

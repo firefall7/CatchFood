@@ -18,7 +18,7 @@
 	document.getElementById(categoryId).classList.add('active');
     }
 </script>
-</head>
+</head> 
 <body>
 	<jsp:include page="../top.jsp"/>
 	<link rel="stylesheet" href="/css/menu.css">

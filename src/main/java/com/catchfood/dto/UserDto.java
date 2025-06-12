@@ -18,4 +18,4 @@ public class UserDto {
 	private String userAddrdetail;
 	private LocalDateTime userJoindate ;
 	private String role;
-}
+} 

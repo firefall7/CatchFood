@@ -20,7 +20,7 @@
 	        <div class="form-group">
 	            <label>제목</label>
 	            <input type="text" name="noticeTitle" value="${notice.noticeTitle}" required>
-	        </div>
+	        </div> 
 	
 	        <div class="form-group row-group">
 	            <div class="row-item">

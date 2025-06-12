@@ -25,4 +25,4 @@ public interface NoticeDao {
 	int noticeCount();
 	
 	List<NoticeDto> getRecentNotices();
-}
+} 

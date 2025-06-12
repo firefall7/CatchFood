@@ -14,4 +14,4 @@ public interface MenuDao {
     public int updatemenu(MenuDto menudto);
     public void deletemenu(@RequestParam("menuNum") int menuNnum);
     List<MenuDto> recommendmenu();
-}
+} 

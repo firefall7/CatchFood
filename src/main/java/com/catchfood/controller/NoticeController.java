@@ -63,7 +63,7 @@ public class NoticeController {
 	    NoticeDto notice = noticedao.noticeDetail(noticeNum);
 	    model.addAttribute("notice", notice);
 	    return "Notice/noticeupdate"; 
-	}
+	} 
 	
 	@RequestMapping("/noticeupdateok")
 	public String updateNotice(@ModelAttribute NoticeDto noticeDto) {

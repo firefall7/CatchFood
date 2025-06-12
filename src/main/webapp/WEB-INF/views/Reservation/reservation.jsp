@@ -10,7 +10,7 @@
   	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<link rel="stylesheet" href="/css/reservation.css">
 </head>
-<body>
+<body> 
 	<jsp:include page="../top.jsp"/>
 	
 	<div class="reservationHeader">

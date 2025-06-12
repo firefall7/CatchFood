@@ -18,7 +18,7 @@
             <th>제목</th>
             <td colspan="5">${notice.noticeTitle}</td>
         </tr>
-        <tr>
+        <tr> 
             <th>공지 유형</th>
             <td>${notice.noticeType}</td>
             <th>작성일</th>

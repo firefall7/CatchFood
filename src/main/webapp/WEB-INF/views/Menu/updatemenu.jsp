@@ -20,7 +20,7 @@
 		            <label>
 		                <input type="checkbox" name="menuRecommend" value="1"
 		                       <c:if test="${menuDetail.menuRecommend == 1}">checked="checked"</c:if>> 추천메뉴 여부
-		            </label>
+		            </label> 
 		        </div>
 		
 		        <div class="form-group">

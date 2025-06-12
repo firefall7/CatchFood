@@ -11,7 +11,7 @@
 		.slide-img { display: none; }
 		.slide-img.active { display: block; }
 	</style>
-</head>
+</head> 
 	<body>
 	
 			<jsp:include page="../top.jsp"/>

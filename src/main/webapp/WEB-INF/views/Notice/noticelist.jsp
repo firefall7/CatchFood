@@ -18,7 +18,7 @@
 		            <button class="write-btn">공지사항 작성</button>
 		        </a>
 		    </div>
-		</c:if>
+		</c:if> 
 
 	
 	    <table class="notice-table">

@@ -21,7 +21,7 @@
 		<!-- <th>예약한 시간</th>-->
 		<th>회원 번호</th>
 		<th>예약 취소</th>
-	</tr>
+	</tr> 
 	<c:forEach var="dto" items="${lists}">
 	<tr>
 		<td>${dto.reservationNum}</td>

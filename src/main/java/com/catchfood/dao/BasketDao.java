@@ -13,4 +13,4 @@ public interface BasketDao {
 	public int BasketInsert(BasketDto basketdto);
 	List<BasketDto> BasketList(int reservationNum);
 	List<BasketViewDto> MyBasket(@RequestParam("userNum") int userNum);
-}
+} 

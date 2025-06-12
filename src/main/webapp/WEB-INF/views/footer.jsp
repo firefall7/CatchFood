@@ -16,4 +16,4 @@
 		| &copy; 2025 CatchFood. All rights reserved.
 	</footer>
 </body>
-</html>
+</html> 

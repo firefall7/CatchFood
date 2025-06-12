@@ -19,4 +19,4 @@ public class ReservationDto {
 	
 	private List<Integer> menuNum;
     private List<Integer> menuTotal;
-}
+} 

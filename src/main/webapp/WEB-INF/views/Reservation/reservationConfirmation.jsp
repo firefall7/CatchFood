@@ -17,7 +17,7 @@
     <header>
         <jsp:include page="../top.jsp"/>
         <h1>예약 확인</h1>
-    </header>
+    </header> 
 
     <%
         ReservationDto dto = (ReservationDto)session.getAttribute("tempReservation");

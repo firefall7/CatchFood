@@ -12,4 +12,4 @@ public interface PaymentDao {
 	String findImpUidByReservationNum(@Param("reservationNum") int reservationNum);
 	
 	void deleteByReservationNum(@Param("reservationNum") int reservationNum);
-}
+} 

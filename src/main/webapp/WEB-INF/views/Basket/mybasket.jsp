@@ -19,7 +19,7 @@
 	  <c:if test="${r.reservationNum != prevReservation}">
 	    <c:if test="${status.index != 0}">
 	        </table>
-	      </div>
+	      </div> 
 	    </c:if>
 	
 	    <div class="reservation-block">

@@ -16,7 +16,7 @@
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     transition: transform 0.2s ease;
-}
+} 
 
 .menu-card:hover {
     transform: scale(1.03);

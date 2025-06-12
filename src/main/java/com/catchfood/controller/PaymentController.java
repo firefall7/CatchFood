@@ -10,6 +10,6 @@ public class PaymentController {
 	public String payment() {
 		
 		return "Payment/payment";
-	}
+	} 
 	
 }

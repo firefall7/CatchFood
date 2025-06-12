@@ -12,4 +12,4 @@ public class ReviewDto {
 	private String reviewImage;
 	private int userNum;
 	private String userId;
-}
+} 

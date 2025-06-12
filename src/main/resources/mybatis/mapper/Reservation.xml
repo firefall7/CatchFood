@@ -17,7 +17,7 @@
 	<!-- 개수 컨택-->
 	<select id="reservationCount" resultType="int">
     select count(*) from reservation
-	</select>
+	</select> 
 	
 	<!-- 예약 상세 보기(관리자용) -->
 	<select id="reservationDetail" resultType="com.catchfood.dto.BasketViewDto">

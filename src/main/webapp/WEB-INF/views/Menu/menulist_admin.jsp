@@ -17,7 +17,7 @@
 	document.getElementById(categoryId).classList.add('active');
     }
 </script>
-</head>
+</head> 
 <body>
 	<jsp:include page="../top.jsp"/>
 	

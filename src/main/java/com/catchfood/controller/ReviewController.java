@@ -64,7 +64,7 @@ public class ReviewController {
                         saveFile = new File(dir, newName);
                         cleanName = newName;
                         count++;
-                    }
+                    } 
 
                     file.transferTo(saveFile);
                     imagePaths.append(webPath).append(cleanName).append(",");
@@ -91,7 +91,7 @@ public class ReviewController {
         int pageSize = 10;
         int startRow = (page - 1) * pageSize;
         int totalCount = reviewdao.getTotalCount();
-        int totalPage = (int) Math.ceil(totalCount / (double) pageSize);
+        int totalPage = (int ) Math.ceil(totalCount / (double) pageSize);
 
         List<ReviewDto> reviewList = reviewdao.ReviewListPage(startRow, pageSize);
 

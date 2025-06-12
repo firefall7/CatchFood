@@ -9,4 +9,4 @@ public class PaymentDto {
 	private int reservationNum;
 	private String impUid;
 
-}
+} 

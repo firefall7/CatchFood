@@ -16,7 +16,7 @@
 		<table border="1" width="500">
 		<input type="hidden" name="userNum" value="${sessionScope.loginUser.userNum}">
 			<tr>
-				<td>
+				<td> 
 					<select name="reviewStars">
 						<option value="1">⭐️</option>
 						<option value="2">⭐️⭐️</option>

@@ -20,7 +20,7 @@
                 <td colspan="3">
                     <input type="text" name="noticeTitle" required>
                 </td>
-            </tr>
+            </tr> 
             <tr>
                 <th>공지 유형</th>
                 <td>

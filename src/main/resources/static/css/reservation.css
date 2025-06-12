@@ -19,7 +19,7 @@
   margin-bottom: 30px;
 }
 
-/* 전체 폼 중앙 정렬 */
+/* 전체 폼 중앙 정렬 */ 
 form[name="reservation"] {
   max-width: 600px;
   margin: 0 auto;

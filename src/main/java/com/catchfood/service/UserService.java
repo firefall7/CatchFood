@@ -23,7 +23,7 @@ public class UserService {
         user.setUserPasswd(encryptedPassword);
 
         return userDao.registerProcess(user) > 0;
-    }
+    } 
     
     //저장된 정보랑 비교해서 검증
     public UserDto login(String userId, String rawPassword) {

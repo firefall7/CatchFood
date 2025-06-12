@@ -15,7 +15,7 @@
 		</select>
 		
 		
-		<!-- 회원가입시 정보 삽입 -->
+		<!-- 회원가입시 정보 삽입 --> 
 		<insert id="registerProcess" parameterType="com.catchfood.dto.UserDto">
 	        insert into user (
 	            userId, userPasswd, userEmail, userName, userBirth, 

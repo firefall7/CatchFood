@@ -15,5 +15,5 @@
 	
 	<delete id="deleteByReservationNum">
 	  DELETE FROM `payment` WHERE reservationNum = #{reservationNum}
-	</delete>
+	</delete> 
 </mapper>

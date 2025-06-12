@@ -23,7 +23,7 @@
 		) values (
   		  #{menuName},#{menuPrice},#{menuDescription},#{menuImage},#{menuRecommend},#{menuCount},#{menuPTotal},#{categoryNum}
   		  );
-	</insert>
+	</insert> 
 	
 	<update id="updatemenu">
 		update menu set

@@ -19,7 +19,7 @@
   <select id="noticeDetail" resultType="com.catchfood.dto.NoticeDto">
  		 select * from notice
  		 where noticeNum = #{noticeNum}
-	</select>
+	</select> 
 
    <update id="noticeViewCount">
   		update notice

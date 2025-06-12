@@ -14,7 +14,7 @@
 	    <label><input type="checkbox" id="dontShowToday"> 오늘 하루 이 창 다시 열지 않기</label>
 	    <br>
 	    <button class="close-btn" onclick="closePopup()">닫기</button>
-	  </div>
+	  </div> 
 	
 	  <script>
 	    function closePopup() {
